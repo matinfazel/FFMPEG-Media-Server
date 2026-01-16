@@ -1,7 +1,6 @@
 # FFMPEG-Media-Server
 
-Small C++ example that reads a video stream with FFmpeg, decodes it, converts frames
-to RGB24 rawvideo, and pushes the result to a streaming URL (RTSP/RTMP/RTP/UDP/TCP).
+C++ application that reads a video stream with FFmpeg, decodes it, converts frames to RGB24 rawvideo, and pushes the result to a streaming URL (RTSP/RTMP/RTP/UDP/TCP).
 
 ## Features
 - Input from RTSP, RTMP, local files (MP4), and other FFmpeg-supported sources.
@@ -47,10 +46,6 @@ Examples:
 - Press `Ctrl+C` to pause/resume processing (SIGINT toggles a pause flag).
 - A local file named `camera.mp4` is written as raw packet data for debugging.
 
-## Limitations
-- The current loop does not filter out non-video packets. Inputs with audio streams
-  may cause decoder errors unless you adapt the code to handle stream selection.
-- No audio is encoded or pushed.
 
 ## Troubleshooting
 - If CMake cannot find FFmpeg headers or libraries, install the `-dev` packages
